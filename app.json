@@ -1,1 +1,23 @@
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import HomeScreen from "./src/screens/HomeScreen";
+import SlotMachine from "./src/screens/SlotMachine";
+import Roulette from "./src/screens/Roulette";
+import WalletDemo from "./src/screens/WalletDemo";
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Slots" component={SlotMachine} />
+        <Stack.Screen name="Roulette" component={Roulette} />
+        <Stack.Screen name="Wallet" component={WalletDemo} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
